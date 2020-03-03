@@ -1,1 +1,21 @@
-<p> Server with ID {{serverId}} is {{serverStatus}} , Server status from method {{getServerStatus()}}</p>
+
+<hr>
+<p>
+    7. Attribute directives ngStyle (on Server component)
+</p>
+
+<p [ngStyle]="{backgroundColor: getColor()}" > Server with ID {{serverId}} is {{serverStatus}} ,
+     Server status from method {{getServerStatus()}}
+</p>
+
+---------------------------------------------------------------------
+
+<p>
+    8. Attribute directives ngClass (on Server component)
+</p>
+
+<p [ngClass]="{online: serverStatus ==='online'}"> Server with ID {{serverId}} is {{serverStatus}} ,
+    Server status from method {{getServerStatus()}}
+</p>
+
+---------------------------------------------------------------------

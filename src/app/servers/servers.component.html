@@ -1,27 +1,81 @@
 
-<label>Server name</label>
+<p>
+    1.Event binding passing parameters: (OnKeyPressSimulation)
+</p>
 
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
-<hr>
-{{serverName}}
-<hr>
-
-
-<input type="text" class="form-control" [(ngModel)]="serverName2">
+Input 1: <input type="text" width="300px" class="form-control" (input)="onUpdateServerName($event)">
 
 <hr>
-{{serverName2}}
+
+Interpolation (serverName) -> : {{serverName}}
+
 <hr>
 
 
+<p>
+    2. Two ways :binding aexample (input):
+</p>
+
+Input 2: <input type="text" width="300px" class="form-control" [(ngModel)]="serverName2">
+
+<hr>
+ Interpolation (serverName2)-> : {{serverName2}}
+
+ <hr>
+
+<p>
+    3. Property binding (button Change the status) and Event binding example ( Call a method when Click):
+</p>
 
 <button (click)="onCreateServer()" class="btn btn-primary" [disabled]="!allowNewServer">Add server</button>
+
+<hr>
+
+<p>
+    4. Interpolation and property binding (one way) Example below:
+</p>
+
 <p [innerText]="allowNewServer"> </p> , {{allowNewServer}} 
+
 <hr>
+
+<p>
+5. Interpolation Example + property binding examle manage from the TypeScriptFile below:
+</p>
+
 {{serverCreationStatus}}
+
 <hr>
+
+<p>
+ 6. Using custom components
+</p>
+  
 <app-server></app-server>
 <app-server></app-server>
 
+<hr>
 
+<p>
+    6. Directives ngif (Click on the button)
+</p>
+<hr>
 
+<p *ngIf="serverCreated">
+    Server was created, server name from Imput 1 is {{serverName}}
+</p>
+
+<p>
+    7. Directives ngif else (Click on the button)
+</p>
+<hr>
+
+<p *ngIf="serverCreated; else noServer">
+    Server was created (If condition) 
+</p>
+<ng-template #noServer>
+    <p> No server was created! (else condition)</p> 
+</ng-template>
+
+<app-server></app-server>
+<app-server></app-server>
