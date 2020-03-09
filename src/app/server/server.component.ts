@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class ServerComponent{
     public serverId: number = 10;
     public serverStatus: string = 'offline'
+   
 
     constructor(){
         this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';

@@ -79,3 +79,15 @@ Input 2: <input type="text" width="300px" class="form-control" [(ngModel)]="serv
 
 <app-server></app-server>
 <app-server></app-server>
+
+<hr>
+
+<p>
+    10. ngFor structural directives (Click on the button to add servers)
+</p>
+
+<button (click)="onCreateServer()" class="btn btn-primary" [disabled]="!allowNewServer">Add server</button>
+
+<hr>
+
+<app-server *ngFor="let server of servers"></app-server>
